@@ -2,25 +2,30 @@
 
 namespace App\Imports;
 
-use App\;
-use Illuminate\Support\Facades\Hash;
-use Maatwebsite\Excel\Concerns\ToModel;
 
-class ProductImport implements ToModel
+use App\ProductImport1;
+
+
+use Illuminate\Support\Facades\product;
+use Maatwebsite\Excel\Concerns\FromCollection;
+
+class ProductImport implements FromCollection
 {
     /**
      * @param array $row
      *
      * @return User|null
      */
-    public function model(array $row)
+    public function collection(array $row)
     {
         return new product([
-            'product_name'     => $row[0],
-           'pruduct_id'    => $row[1], 
-           'product_by_at'     => $row[2],
-           'price'    => $row[3], 
-           'description' => Hash::make($row[4]),
+            'name'     => $row[1],
+           'price'    => $row[2], 
+             'product_ty_id'    => $row[5], 
+              'created_by'    => $row[8], 
+
+           
+
         ]);
     }
 }

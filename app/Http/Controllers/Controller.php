@@ -12,12 +12,3 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
 
-class UsersController extends Controller 
-{
-    public function import() 
-    {
-        Excel::import(new UsersImport, 'Product.xlsx');
-        
-        return redirect('/')->with('success', 'All good!');
-    }
-}

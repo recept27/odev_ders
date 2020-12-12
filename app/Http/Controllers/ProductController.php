@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\ProductExport;
+use App\Imports\ProductImport;
 use App\Models\product;
 use App\Models\User;
 use Illuminate\Http\Request;

@@ -30,4 +30,4 @@ Route::post('/save-product', [\App\Http\Controllers\ProductController::class, 's
 Route::get('/show-product',[\App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
 Route::get('/download-products',[\App\Http\Controllers\ProductController::class, 'export'])->name('product.export');
 
-Route::get('/upload-products',[\App\Http\Controllers\ProductController::class, 'import'])->name('product.import');
+Route::get('/upload-product',[\App\Http\Controllers\ProductController::class, 'import'])->name('product.import');
